@@ -15,10 +15,12 @@ ROAST = (
 
 OUTPUT_PATH = "/output/entry.txt"
 
+MAX_ENTRY_CHARS = 200
+
 
 def main() -> None:
     text = ROAST.strip()
-    if not 1 <= len(text) <= 200:
+    if not 1 <= len(text) <= MAX_ENTRY_CHARS:
         raise ValueError("roast must be 1-200 characters, got %d" % len(text))
     if not text.strip():
         raise ValueError("roast must not be only whitespace")
